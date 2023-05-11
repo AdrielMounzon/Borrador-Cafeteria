@@ -24,4 +24,31 @@ describe("Producto", () => {
     expect(listaProd.Lista.length).toEqual(1);
     expect(listaProd.Lista[0].Id).toEqual(2);
   });
+
+  it("deberia asignar un stock", () => {
+    let prod1= new Producto(3, "Galletas", "Galletas de chocolate con relleno de crema");
+    prod1.asignarCantidad(10);
+    expect(prod1.Stock).toEqual(10);
+  });
+
+  it("deberia incrementar el stock dada una cantidad", () => {
+    let prod1= new Producto(3, "Galletas", "Galletas de chocolate con relleno de crema");
+    prod1.asignarCantidad(10);
+    prod1.incrementarStock(5);
+    expect(prod1.Stock).toEqual(15);
+  });
+
+  it("deberia decrementar el stock dada una cantidad reservada", () => {
+    let prod1= new Producto(3, "Galletas", "Galletas de chocolate con relleno de crema");
+    prod1.asignarCantidad(10);
+    prod1.decrementarStock(5);
+    expect(prod1.Stock).toEqual(5);
+  });
+
+  it("NO deberia decrementar el stock dada una cantidad reservada mayor al stock", () => {
+    let prod1= new Producto(3, "Galletas", "Galletas de chocolate con relleno de crema");
+    prod1.asignarCantidad(10);
+    prod1.decrementarStock(15);
+    expect(prod1.Stock).toEqual(10);
+  });
 });

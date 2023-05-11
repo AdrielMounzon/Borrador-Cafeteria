@@ -25,7 +25,8 @@ class Producto
 
   asignarCantidad(stock)
   {
-    this.Stock=stock;
+    if(stock>0)
+      this.Stock=stock;
   };
 
   incrementarStock(cantidadReservada)
@@ -35,7 +36,8 @@ class Producto
 
   decrementarStock(cantidadReservada)
   {
-    this.Stock-=cantidadReservada;
+    if(cantidadReservada<this.Stock)
+      this.Stock-=cantidadReservada;
   }
 }
 
