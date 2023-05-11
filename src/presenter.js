@@ -1,9 +1,8 @@
 import sumar from "./sumador";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+const nombre = document.querySelector("#nombre");
+const descripcion = document.querySelector("#descripcion");
+const form = document.querySelector("#producto-form");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
